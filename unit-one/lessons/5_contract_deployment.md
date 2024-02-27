@@ -25,7 +25,7 @@ The output should look something like this if the contract was successfully depl
 
 The object ID under the `Published Objects` section is the object ID of the Hello World package we just published.
 
-Let's export that to a variable. 
+Let's export that as an environment variable. 
 
 ```bash
 export PACKAGE_ID=<package object ID from previous output>
