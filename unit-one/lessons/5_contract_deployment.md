@@ -15,18 +15,18 @@ The Sui CLI command for deploying the package is the following:
 sui client publish --gas-budget $GAS_BUDGET [absolute file path to the package that needs to be published]
 ```
 
-For the `gas_budget`, we can use a standard value like `10000000`.
+For the `gas_budget`, we can use a standard value like 1,000,000,000 MIST (1 SUI, or 1e9 MIST).
 
 Let's export that as an environmental variable.
 
 ```bash
-export GAS_BUDGET=10000000
+export GAS_BUDGET=1000000000
 ```
 
 Note that if you are know you are using zsh or fish shell you may prefer the improved readability provided by numeric underscore grouping.
 
 ```zsh
-export GAS_BUDGET=100_000_000
+export GAS_BUDGET=1_000_000_000
 ```
 
 If the absolute file path to the package is not provided, it will default to `.` or the current directory. 
