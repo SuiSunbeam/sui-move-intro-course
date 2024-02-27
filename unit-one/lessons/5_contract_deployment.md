@@ -12,10 +12,22 @@ the local node. Just set the Sui CLI to the respective network ([Set current env
 The Sui CLI command for deploying the package is the following:
 
 ```bash
-sui client publish --gas-budget <gas_budget> [absolute file path to the package that needs to be published]
+sui client publish --gas-budget $GAS_BUDGET [absolute file path to the package that needs to be published]
 ```
 
-For the `gas_budget`, we can use a standard value like `20000000`.
+For the `gas_budget`, we can use a standard value like `10000000`.
+
+Let's export that as an environmental variable.
+
+```bash
+export GAS_BUDGET=10000000
+```
+
+Note that if you are know you are using zsh or fish shell you may prefer the improved readability provided by numeric underscore grouping.
+
+```zsh
+export GAS_BUDGET=100_000_000
+```
 
 If the absolute file path to the package is not provided, it will default to `.` or the current directory. 
 
@@ -25,7 +37,7 @@ The output should look something like this if the contract was successfully depl
 
 The object ID under the `Published Objects` section is the object ID of the Hello World package we just published.
 
-Let's export that as an environment variable. 
+Let's export that too. 
 
 ```bash
 export PACKAGE_ID=<package object ID from previous output>
