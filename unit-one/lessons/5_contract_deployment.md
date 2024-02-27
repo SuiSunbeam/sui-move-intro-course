@@ -7,7 +7,7 @@ You can find the complete Hello World project in [this directory](../example_pro
 ## Deploying the Contract
 
 We will use the Sui CLI to deploy the package to the Sui network. You can deploy it to either the Sui devnet, testnet, or 
-the local node. Just set the Sui CLI to the respective network (Set current environment)[https://docs.sui.io/references/cli/client#set-current-environment] and have enough tokens to pay for gas (Get coins)[https://docs.sui.io/guides/developer/getting-started/get-coins].
+the local node. Just set the Sui CLI to the respective network [Set current environment](https://docs.sui.io/references/cli/client#set-current-environment) and have enough tokens to pay for gas [Get coins](https://docs.sui.io/guides/developer/getting-started/get-coins).
 
 The Sui CLI command for deploying the package is the following:
 
