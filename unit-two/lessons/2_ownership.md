@@ -29,6 +29,8 @@ In order for an object to be owned by another object, it is done using `dynamic_
 
 ## Shared Objects
 
+Shared object transactions require global ordering through a consensus layer protocol, unliked owned objects.
+
 ## Shared Immutable Objects
 
 Certain objects in Sui cannot be mutated by anyone, and because of this, these objects do not have an exclusive owner. All published packages and modules in Sui are immutable objects. 
@@ -41,7 +43,7 @@ To make an object immutable manually, one can call the following special functio
 
 ## Shared Mutable Objects
 
-Shared objects in Sui can be read or mutated by anyone. Shared object transactions require global ordering through a consensus layer protocol, unliked owned objects. 
+Shared objects in Sui can be read or mutated by anyone.
 
 To create a shared object, one can call this method:
 
