@@ -29,7 +29,7 @@ struct TranscriptObject has key {
 
 ## Create a Sui Object
 
-Creating a Sui object requires a unique ID. We use the `sui::object::new` function to create a new ID passing in the current `TxContext`. 
+Creating a Sui object requires a unique ID, of the type `UID`[^1]. To ensure no two values of the type `UID` are ever equal, this is a privileged type that must derive its value from the current `TxContext`. We can use the `sui::object::new` function to create a new value of type `UID` by passing in the current `TxContext`.
 
 In Sui, every object must have an owner, which can be either an address, another object, or "shared". The following example demonstrates how to assign ownership of new `TranscriptObject` instances to the transaction sender. `ctx` references the `TxContext`, which is a privileged object created by the VM that was passed into the entrypoint of the transaction. We extract the sender by passing it to the standard library `tx_context::sender` method.
 
@@ -53,5 +53,7 @@ public fun create_transcript_object(history: u8, math: u8, literature: u8, ctx: 
 
 *💡Note: the provided sample code generates a warning message: warning[Lint W01001]: non-composable transfer to sender. For further details, refer to the article ("Sui Linters and Warnings Update Increases Coder Velocity")[https://blog.sui.io/linter-compile-warnings-update/]*
 
-*💡Note: Move supports field punning, which allows us to skip the field values if the field name happens to be the same as the name of the value variable it is bound to.*
+*💡Note: Move supports field name punning [^2], which allows us to skip the field values if the field name happens to be the same as the name of the value variable it is bound to.*
 
+[^1]: https://github.com/MystenLabs/sui/blob/main/crates/sui-framework/docs/sui-framework/object.md#struct-uid
+[^2]: https://github.com/move-language/move/blob/main/language/documentation/book/src/structs-and-resources.md#creating-structs
